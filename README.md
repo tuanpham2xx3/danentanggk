@@ -11,5 +11,5 @@
 ### npm run build
 ### npx cap sync
 ### npx cap copy
-### [ Lệnh mở Android Studio]
+### [ Lệnh mở Android Studio ]
 ### npx cap open android
