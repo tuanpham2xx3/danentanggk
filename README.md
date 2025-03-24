@@ -1,6 +1,6 @@
 [ Lệnh cài các thư viện cần thiết cho dự án ]
-npm install @capacitor/cli @capacitor/core
-npx cap init
+### npm install @capacitor/cli @capacitor/core
+### npx cap init
 npm install @capacitor/android
 npx cap add android
 npm install @capacitor/camera @capacitor/filesystem @capacitor/preferences
