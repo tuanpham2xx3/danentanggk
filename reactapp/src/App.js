@@ -48,24 +48,12 @@ function App() {
     const shareText = `Chỉ số BMI của tôi là ${bmiResult.bmi} - ${bmiResult.assessment}`;
     
     try {
-      if (navigator.share) {
-        await navigator.share({
-          title: 'Kết quả tính BMI',
-          text: shareText,
-          // Making URL optional as some platforms might not support sharing both text and URL
-          ...(window.location.href && { url: window.location.href })
-        });
-      } else {
-        // Fallback for browsers that don't support the Share API
-        if (navigator.clipboard) {
-          await navigator.clipboard.writeText(shareText);
-          alert('Đã sao chép kết quả vào clipboard!');
-        } else {
-          alert('Trình duyệt của bạn không hỗ trợ tính năng chia sẻ.');
-        }
-      }
+      // For web browsers, directly copy to clipboard
+      await navigator.clipboard.writeText(shareText);
+      alert('Đã sao chép kết quả: ' + shareText);
     } catch (error) {
       console.error('Lỗi khi chia sẻ:', error);
+      alert('Không thể chia sẻ kết quả.');
     }
   };
 
